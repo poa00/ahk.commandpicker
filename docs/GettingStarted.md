@@ -9,6 +9,25 @@ From there just type the name of the command that you want to run, and hit enter
 
 If you want to turn Caps Lock on, use `Shift` + `Caps Lock` to toggle it on and off.
 
+<details>
+<summary> <strong>How to use a shortcut key other than <code>Caps Lock</code></strong></summary>
+ 
+  ### To configure a different shortcut key to activate the AHK Command Picker UI
+  Change the line "`CapsLock::`" contained within the `AHKCommandPicker.ahk` file to the key(s) desired . In the example, the shortcut key is changed from '`Caps Lock`' to '`⊞+Z`' (the Windows key and Z pressed in conjunction):
+```AutoHotkey
+CapsLock::
+	SetCapslockState, Off				; Turn CapsLock off after it was pressed
+	CPLaunchCommandPicker()
+return
+```
+to
+```AutoHotkey
+#z::
+	CPLaunchCommandPicker()
+return
+```
+</details>
+
 ## Adding New Commands
 
 Open the `UserCommands\MyCommands.ahk` file for editing; this can be done quickly by using `Caps Lock` to open the AHK Command Picker and running the `EditMyCommands` command.
